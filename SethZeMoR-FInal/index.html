@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome | The Eternal Branch Series</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!--BG VIDEO-->
+  <video autoplay muted loop id="bg-video">
+    <source src="video/B1.mp4" type="video/mp4">
+  </video>
+
+  <!-- Main Content -->
+  <main>
+    <div class="slider-container">
+      <div id="layer1" class="image-layer active"></div>
+      <div id="layer2" class="image-layer"></div>
+      <div id="layer3" class="image-layer"></div>
+      <canvas id="trail"></canvas>
+
+      <section class="welcome-text">
+        <h1 id="branchTitle">Welcome to <span class="highlight">The Eternal Branch</span> Series</h1>
+        <p>Created by: <span>Richaf Animations</span></p>
+      </section>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav-buttons">
+      <a href="character.html" class="btn">Character</a>
+      <a href="about.html" class="btn">About Me</a>
+      <a href="portfolio.html" class="btn" id="btn">About The Series</a>
+      <a href="#" class="btn" id="social-btn">Social Media</a>
+    </nav>
+  </main>
+
+  <!-- Modals -->
+  <div class="modal-overlay" id="confirmModal">
+    <div class="modal-box">
+      <h2>Open External Page?</h2>
+      <p>You're about to visit <strong>Richaf Animations</strong> social media page.<br>Continue?</p>
+      <div class="modal-buttons">
+        <button class="modal-btn yes" id="confirmYes">YES</button>
+        <button class="modal-btn cancel" id="confirmNo">CANCEL</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+  <footer>
+    <p class="footer-text">© 2020 - 2026 SleepyUncleAim. Educational Purposes Only. No Profit Were Made In this Website</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

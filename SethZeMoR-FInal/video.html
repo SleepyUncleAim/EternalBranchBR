@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Denied Memoria Player</title>
+    <link rel="stylesheet" href="sigmastylelol.css" />
+  </head>
+  <body>
+
+    <!-- Background and Overlay -->
+    <div id="background-rotator"></div>
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Main Container -->
+    <div class="container">
+      <header>
+        <button id="menuBtn" class="menu-btn"></button>
+        <h1>The Richaf Animations' Collection</h1>
+        <p>Broken Realm & Eternal Branch - is a series made by Richaf Animations<br>/ Formerly known as Richafied Warp Animations</p>
+      </header>
+
+      <!-- Player Section -->
+      <div class="player">
+        <video id="video" controls></video>
+        <div class="controls">
+          <button id="prev">Prev</button>
+          <button id="play">Play</button>
+          <button id="next">Next</button>
+        </div>
+        <p id="title" class="title">No video loaded</p>
+      </div>
+
+      <!-- Playlist -->
+      <div class="playlist" id="playlist"></div>
+    </div>
+
+    <!-- Confirmation Popup -->
+    <div id="popup" class="popup hidden">
+      <div class="popup-box">
+        <p>You're about to open an external site:</p>
+        <p><strong>www.sethzemor.net</strong></p>
+        <div class="popup-actions">
+          <button id="cancelPopup" class="btn cancel">Cancel</button>
+          <button id="confirmPopup" class="btn confirm">Continue</button>
+        </div>
+      </div>
+    </div>
+    <a href="index.html" class="back-btn">← Back</a>
+    <script src="scriptsigma.js"></script>
+  </body>
+
+ <!--BAGIAN PALING BAWAH-->
+    <footer> 
+        <div class="MadeBy">
+            <p onclick="window.open('https://lnk.bio/RichafAnimations')">
+                <b>© Made By Richaf Animations</b>
+            </p>
+        </div>
+        <div class="Instagram">
+            <button onclick="window.open('https://www.instagram.com/richafanimations/')">
+                Instagram
+            </button>
+        </div>
+        <div class="subscribe">
+            <button onclick="window.open('https://www.youtube.com/@RichafAnimations?sub_confirmation=1')">
+                YouTube
+            </button>
+        </div>
+    </footer>
+</html> 

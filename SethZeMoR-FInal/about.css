@@ -1,0 +1,402 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #000;
+  color: #00ffff;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+}
+
+body.page-loading {
+  animation: pageEnter 0.6s ease-out forwards;
+}
+
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body.page-exit {
+  animation: pageExit 0.5s ease-in forwards;
+}
+
+@keyframes pageExit {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* === BACKGROUND === */
+.background {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.background video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  filter: brightness(0.4);
+  object-fit: fill;
+}
+
+@keyframes fade {
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* === MAIN CONTAINER === */
+.about-container {
+  padding: 4vh 6vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #00ffff #000;
+}
+
+.about-container::-webkit-scrollbar {
+  width: 8px;
+}
+.about-container::-webkit-scrollbar-thumb {
+  background: #00ffff;
+  border-radius: 10px;
+}
+.about-container::-webkit-scrollbar-track {
+  background: #000;
+}
+
+/* === TITLE === */
+.title {
+  text-align: center;
+  font-size: clamp(1.5rem, 3vw, 3rem);
+  text-shadow: 0 0 25px #00ffff, 0 0 50px #00ffff;
+  font-weight: 700;
+  letter-spacing: 2px;
+  animation: titleEnter 0.8s ease-out 0.2s backwards;
+}
+
+@keyframes titleEnter {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* === ABOUT WRAPPER === */
+.about-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* === ABOUT CONTENT BOX === */
+.about-content-box {
+  background: rgba(0, 255, 255, 0.08);
+  border: 1px solid rgba(0, 255, 255, 0.4);
+  border-radius: 20px;
+  padding: 2rem 2.5rem;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  animation: contentEnter 0.5s ease-out 0.3s backwards;
+}
+
+@keyframes contentEnter {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.about-content-box:hover {
+  box-shadow: 0 0 40px rgba(0, 255, 255, 0.3);
+  border-color: rgba(0, 255, 255, 0.6);
+}
+
+.section-title {
+  font-size: clamp(1.3rem, 2vw, 1.8rem);
+  color: #00ffff;
+  text-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.about-content-box p {
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.8;
+  font-size: clamp(0.95rem, 1.05vw, 1.05rem);
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+
+.about-content-box p:last-child {
+  margin-bottom: 0;
+}
+
+.about-content-box strong {
+  color: #00ffff;
+  font-weight: 600;
+}
+
+/* === MILESTONE BOX (COLLAPSIBLE) === */
+.milestone-box {
+  background: rgba(0, 255, 255, 0.08);
+  border: 1px solid rgba(0, 255, 255, 0.4);
+  border-radius: 20px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  animation: contentEnter 0.5s ease-out 0.4s backwards;
+}
+
+.milestone-box:hover {
+  box-shadow: 0 0 40px rgba(0, 255, 255, 0.4);
+}
+
+.milestone-box.expanded {
+  background: rgba(0, 255, 255, 0.12);
+  border-color: rgba(0, 255, 255, 0.6);
+  box-shadow: 0 0 40px rgba(0, 255, 255, 0.5);
+}
+
+/* === MILESTONE HEADER (CLICKABLE) === */
+.milestone-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.3s ease;
+}
+
+.milestone-header:hover {
+  background: rgba(0, 255, 255, 0.1);
+}
+
+.milestone-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+}
+
+.milestone-info .section-title {
+  margin-bottom: 0;
+}
+
+.milestone-count {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-style: italic;
+}
+
+.expand-icon {
+  font-size: 1.5rem;
+  color: #00ffff;
+  transition: transform 0.3s ease;
+  margin-left: auto;
+}
+
+.milestone-box.expanded .expand-icon {
+  transform: rotate(180deg);
+}
+
+/* === MILESTONE CONTENT === */
+.milestone-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.milestone-box.expanded .milestone-content {
+  max-height: 1000px;
+  overflow-y: auto;
+}
+
+.milestone-content::-webkit-scrollbar {
+  width: 6px;
+}
+.milestone-content::-webkit-scrollbar-thumb {
+  background: rgba(0,255,255,0.4);
+  border-radius: 6px;
+}
+.milestone-content::-webkit-scrollbar-thumb:hover {
+  background: #00ffff;
+}
+.milestone-content::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.4);
+}
+
+.milestone-list {
+  padding: 0 2rem 2rem 2rem;
+}
+
+/* === MILESTONE ITEM === */
+.milestone-item {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: rgba(0, 255, 255, 0.05);
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 1.2rem 1.5rem;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+.milestone-item:hover {
+  background: rgba(0, 255, 255, 0.15);
+  border-color: rgba(0, 255, 255, 0.5);
+  transform: translateX(10px);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+}
+
+.milestone-icon {
+  width: 50px;
+  height: 50px;
+  background: rgba(0, 255, 255, 0.2);
+  border: 2px solid #00ffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+}
+
+.milestone-details {
+  flex: 1;
+}
+
+.milestone-title {
+  font-size: clamp(1rem, 1.2vw, 1.15rem);
+  color: #00ffff;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+.milestone-date {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-style: italic;
+}
+
+/* === BACK BUTTON === */
+.back-btn {
+  position: fixed;
+  top: 2vh;
+  left: 2vw;
+  color: #00ffff;
+  border: 2px solid #00ffff;
+  padding: 0.5rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.5);
+  animation: backBtnEnter 0.6s ease-out 0.6s backwards;
+}
+
+@keyframes backBtnEnter {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.back-btn:hover {
+  background: #00ffff;
+  color: #000;
+  box-shadow: 0 0 25px #00ffff;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .about-container {
+    padding: 2vh 4vw;
+  }
+  
+  .title {
+    font-size: 1.8rem;
+  }
+  
+  .about-content-box,
+  .milestone-header,
+  .milestone-list {
+    padding: 1.5rem;
+  }
+  
+  .about-content-box p {
+    text-align: left;
+  }
+  
+  .milestone-item {
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  .milestone-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+  
+  .milestone-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .milestone-box.expanded .milestone-content {
+    max-height: 800px;
+  }
+}

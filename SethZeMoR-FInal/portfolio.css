@@ -1,0 +1,240 @@
+:root {
+  --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC",
+    "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei",
+    "Source Han Sans CN", sans-serif;
+}
+
+.main-container {
+  overflow: hidden;
+}
+
+.main-container,
+.main-container * {
+  box-sizing: border-box;
+}
+
+input,
+select,
+textarea,
+button {
+  outline: 0;
+}
+
+
+.main-container.page-loading {
+  animation: pageEnter 0.6s ease-out forwards;
+}
+
+.main-container.page-exit {
+  animation: pageExit 0.5s ease-in forwards;
+}
+
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pageExit {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Mouse Trail Effect */
+#trail {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.main-container {
+  position: relative;
+  width: 1920px;
+  height: 1080px;
+  margin: 0 auto;
+  background: #ffffff;
+  overflow: hidden;
+}
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 1029px;
+  height: 601px;
+  top: -132px;
+  left: 445px;
+  color: #ffffff;
+  font-family: Eater, var(--default-font-family);
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 119.281px;
+  text-align: center;
+  z-index: 8;
+  -webkit-text-stroke: 4px #000000;
+}
+.eternal-branch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 1029px;
+  height: 60px;
+  top: 245px;
+  left: 445px;
+  color: #ffffff;
+  font-family: Rubik Glitch, var(--default-font-family);
+  font-size: 128px;
+  font-weight: 400;
+  line-height: 151.68px;
+  text-align: center;
+  z-index: 7;
+  -webkit-text-stroke: 4px #000000;
+}
+#eb-ptc {
+  position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+/* Back Button */
+.back-btn {
+  position: fixed;
+  top: 2vh;
+  left: 2vw;
+  padding: 0.5rem 1.5rem;
+  background: rgba(0, 0, 0, 0.5);
+  border: 2px solid #00ffff;
+  border-radius: 8px;
+  color: #00ffff;
+  font-weight: 600;
+  text-decoration: none;
+  backdrop-filter: blur(10px);
+  transition: 0.3s;
+  z-index: 10;
+  animation: backBtnEnter 0.6s ease-out 0.8s backwards;
+}
+
+@keyframes backBtnEnter {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.back-btn:hover {
+  background: #00ffff;
+  color: #000;
+  box-shadow: 0 0 25px #00ffff;
+}
+
+.series-description {
+  background-color: rgba(0, 255, 255, 0.08);
+  border: 6px solid rgba(0, 255, 255, 0.4);
+  border-radius: 12px;
+  display: flex;
+  align-items: flex-start;
+  position: absolute;
+  width: 1100px;
+  height: 270px;
+  top: 385px;
+  left: 739px;
+  color: #ffffff;
+  font-family: Righteous, var(--default-font-family);
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 39.734px;
+  text-align: justify;
+  z-index: 4;
+  transition: 0.3s;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+}
+
+.series-description:hover {
+  box-shadow: 0 0 60px rgba(0, 255, 255, 0.6), 0 0 100px rgba(0, 255, 255, 0.4);
+  border-color: rgba(0, 255, 255, 0.8);
+  background-color: rgba(0, 255, 255, 0.15);
+}
+
+.minecraft-animated-series {
+  background-color: rgba(0, 255, 255, 0.08);
+  border: 6px solid rgba(0, 255, 255, 0.4);
+  border-radius: 12px;
+  text-align: justify;
+  display: flex;
+  align-items: flex-start;
+  position: absolute;
+  width: 561px;
+  height: 395px;
+  top: 505px;
+  left: 48px;
+  color: #ffffff;
+  font-family: Righteous, var(--default-font-family);
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 49.668px;
+  z-index: 2;
+  transition: 0.3s;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+}
+
+.minecraft-animated-series:hover {
+  box-shadow: 0 0 60px rgba(0, 255, 255, 0.6), 0 0 100px rgba(0, 255, 255, 0.4);
+  border-color: rgba(0, 255, 255, 0.8);
+  background-color: rgba(0, 255, 255, 0.15);
+}
+
+.cruel-villain-arc {
+  background-color: rgba(0, 255, 255, 0.08);
+  border: 6px solid rgba(0, 255, 255, 0.4);
+  border-radius: 12px;
+  display: flex;
+  align-items: flex-start;
+  position: absolute;
+  width: 1086px;
+  height: 313px;
+  top: 703px;
+  left: 741px;
+  color: #ffffff;
+  font-family: Righteous, var(--default-font-family);
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 39.734px;
+  text-align: justify;
+  z-index: 6;
+  transition: 0.3s;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+}
+
+.cruel-villain-arc:hover {
+  box-shadow: 0 0 60px rgba(0, 255, 255, 0.6), 0 0 100px rgba(0, 255, 255, 0.4);
+  border-color: rgba(0, 255, 255, 0.8);
+  background-color: rgba(0, 255, 255, 0.15);
+}
